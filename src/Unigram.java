@@ -3,7 +3,9 @@ import java.util.HashMap;
 
 public class Unigram {
 
-	HashMap<String, Double> UnigramPro(String[] words){
+	HashMap<String, Double> UnigramPro(UnigramData data){
+		
+		String[] words = data.getWords();
 		
 		HashMap<String, Double> probablity = new HashMap<String, Double>();
 		double value = 1;

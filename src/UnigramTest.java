@@ -14,15 +14,14 @@ public class UnigramTest {
 		
 		double actual = 0.5;
 		
-		
 		InputFile input  = new InputFile();
-		String text = input.read("hoge.txt"); 
+		UnigramData data = new UnigramData();
+		data.setfName("hoge.txt");
+		String[] words = input.read(data); 
 		
-		SplitWord splitInstance = new SplitWord();
-		String[] words = splitInstance.split(text);
-		
+		data.setWords(words);
 		Unigram unigram = new Unigram();
-		HashMap<String, Double> matcher = unigram.UnigramPro(words);
+		HashMap<String, Double> matcher = unigram.UnigramPro(data);
 		assertThat(actual, is(matcher.get("Test")));
 		assertThat(actual, is(matcher.get("hogehoge")));
 	}

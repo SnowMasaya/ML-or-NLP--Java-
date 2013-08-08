@@ -11,9 +11,11 @@ public class InputFileTest {
 
 	@Test
 	public void test() throws FileNotFoundException {
-		String actual = "Test\n";
+		String[] actual = {"Test", "hogehoge"};
 		InputFile input  = new InputFile();
-		String matcher = input.read("hoge.txt"); 
+		UnigramData data = new UnigramData();
+		data.setfName("hoge.txt");
+		String[] matcher = input.read(data); 
 		assertThat(actual, is(matcher));
 	}
 

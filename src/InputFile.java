@@ -8,9 +8,10 @@ import java.util.regex.Pattern;
 
 public class InputFile {
 
-	String read(String fileName) throws FileNotFoundException{
+	String[] read(UnigramData data) throws FileNotFoundException{
 	
 		//ƒtƒ@ƒCƒ‹“Ç‚İ‚İ‚Ì€”õ
+		String fileName = data.getfName();
 		FileReader fr = new FileReader(fileName);
 		BufferedReader br = new BufferedReader(fr);
 		
@@ -33,7 +34,8 @@ public class InputFile {
 		Pattern pattern = Pattern.compile("\n$");
 		Matcher matcher = pattern.matcher(replaceText);
 		String strResult = matcher.replaceAll("");
-		return strResult;
+		String[] words = strResult.split(" ");
+		return words;
 	}
 	
 }
