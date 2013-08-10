@@ -25,8 +25,8 @@ public class UnigramEvalTest {
 		data.setfName("test.txt");
 		eval.evalUnigram(data);
 		
-		double expectPro = 0.5;
-		double coverage  = 0.5;
+		double expectPro = 8.7776701536538;
+		double coverage  = 0.8816298656954246;
 		
 		assertThat(expectPro, is(data.getEntropy()));
 		assertThat(coverage, is(data.getCoverage()));
