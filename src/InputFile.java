@@ -30,12 +30,15 @@ public class InputFile {
 			// TODO: handle exception
 		}
 		//StringŒ^‚É•ÏŠ·‚µ‚Ä•Ô‚·
-		String replaceText  = new String(text);
+		String[] words = replaceMethod(new String(text));
+		return words;
+	}
+	
+	private static String[] replaceMethod(String replaceText) {
 		Pattern pattern = Pattern.compile("\n$");
 		Matcher matcher = pattern.matcher(replaceText);
 		String strResult = matcher.replaceAll("");
 		String[] words = strResult.split(" ");
 		return words;
 	}
-	
 }
